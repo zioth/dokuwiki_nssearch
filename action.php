@@ -14,7 +14,7 @@ class action_plugin_nssearch extends DokuWiki_Action_Plugin
 {
 	function getInfo() {return array('author' => 'Eli Fenton', 'name' => 'Namespace Search Plugin', 'url' => 'http://dokuwiki.org/plugin:nssearch');}
 
-	function register(&$controller)
+	function register(Doku_Event_Handler $controller)
 	{
 		// Edit the query before doing a string search.
 		$controller->register_hook('SEARCH_QUERY_FULLPAGE', 'BEFORE', $this, 'handleQuery');
